@@ -1,0 +1,28 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+repositories {
+	jcenter()
+
+	maven {
+		url "https://dl.bintray.com/stephengold/org.jmonkeyengine"
+	}
+}
+
+mainClassName = 'com.collapsingwave.Application'
+
+dependencies {
+	implementation "org.jmonkeyengine:jme3-core:3.3.2-stable"
+	implementation "org.jmonkeyengine:jme3-desktop:3.3.2-stable"
+	implementation "org.jmonkeyengine:jme3-lwjgl:3.3.2-stable"
+	implementation "org.jmonkeyengine:jme3-bullet:3.3.2-stable"
+	implementation "org.jmonkeyengine:jme3-bullet-native:3.3.2-stable"
+
+//	This is used for testing only. Remove when starting project for real.
+	implementation 'org.jmonkeyengine:jme3-testdata:3.3.0-alpha2'
+}
+
+jar {
+	archiveBaseName = 'collapsingwave'
+	archiveVersion =  '0.1.0'
+}
